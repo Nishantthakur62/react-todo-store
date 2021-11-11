@@ -1,14 +1,15 @@
 import React, { Fragment, useContext, useState } from "react";
-import { GlobalContext } from "../../context/ExpenseContext";
 import { useHistory } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Addform = () => {
   const history = useHistory();
   //Consumer
-  let { addExpense } = useContext(GlobalContext);
+  const theme=useContext(ThemeContext)
+  const darkMode=theme.state.darkMode;
 
   let [formData, setFormData] = useState({
-    descrition: "",
+    description: "",
     amount: 0,
     date: "",
     note: "",
@@ -31,7 +32,7 @@ const Addform = () => {
 
   const clearInputs = () => {
     setFormData({
-      descrition: "",
+      description: "",
       amount: 0,
       date: "",
       note: "",
@@ -40,37 +41,48 @@ const Addform = () => {
 
   return (
     <Fragment>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="description"
-          name="description"
-          onChange={handleChange}
-          value={formData.description}
-        />
-        <input
-          type="number"
-          placeholder="Amount"
-          name="amount"
-          onChange={handleChange}
-          value={formData.amount}
-        />
-        <input
-          type="date"
-          name="date"
-          onChange={handleChange}
-          value={formData.date}
-        />
-        <textarea
-          name="note"
-          cols="30"
-          rows="10"
-          placeholder="Add a note for your expensse (optional)"
-          onChange={handleChange}
-          value={formData.note}
-        ></textarea>
-        <input type="submit" value="Submit Form" />
-      </form>
+      <div className={`"form-heading" ${!darkMode?"form-heading-light":"form-heading-dark"}`}>
+        <div className="container">
+          <h1>Add Expense</h1>
+        </div>
+      </div>
+      <div className= {`${!darkMode?"form-wrapper-light":"form-wrapper-dark"}`}>
+      <div className="container form-wrapper">
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Description"
+            name="description"
+            onChange={handleChange}
+            value={formData.description}
+          />
+          <input
+            type="number"
+            placeholder="Amount"
+            name="amount"
+            onChange={handleChange}
+            value={formData.amount}
+          />
+          <input
+            type="date"
+            name="date"
+            onChange={handleChange}
+            value={formData.date}
+          />
+          <textarea
+            name="note"
+            cols="30"
+            rows="10" 
+            placeholder="Add a note for your expensse (optional)"
+            onChange={handleChange}
+            value={formData.note}
+          ></textarea>
+          <input  type="submit" className= {`submit-btn ${
+        darkMode ? "submit-btn-dark":"submit-btn-light"
+      }`}   value="Submit Form" />
+        </form>
+      </div>
+      </div>
     </Fragment>
   );
 };

@@ -6,10 +6,16 @@
 
 .navbar {
   height: 10vh;
-  background-color: #364051;
+}
+.nav-light {
+  background-color: #7f9cce;
   color: white;
 }
 
+.nav-dark {
+  background-color: rgb(44, 44, 82);
+  color: white;
+}
 .navbar .navbar-wrapper {
   height: 100%;
   width: 60%;
@@ -23,15 +29,17 @@
   font-size: 28px;
   cursor: pointer;
 }
-
-.navbar .navbar-wrapper h3 {
-  cursor: pointer;
+/* Expense Details */
+.expensedetails { 
+  height: 250px;
+}
+.header-light {
+  background-color: #f7f7f7;
 }
 
-/* Expense Details */
-.expensedetails {
-  height: 250px;
-  background-color: #f7f7f7;
+.header-dark {
+  background-color: #8b8a8ae3;
+  color: white;
 }
 
 .expense-content h1 {
@@ -43,12 +51,37 @@
   padding: 15px 20px;
   border: none;
   outline: none;
-  background-color: #1c88bf;
-  font-size: 18px;
   color: white;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+.btn-light:hover {
+  border: 1px  solid black;
+
+}
+
+.btn-light {
+  background-color: #1c88bf;
+}
+
+.btn-dark {
+  background-color: #153444;
+}
+.btn-dark:hover {
+  border: 1px solid white;
 }
 
 /* Filter form */
+.filter-light {
+  background-color: white;
+}
+.filter-dark {
+  background-color: rgb(8, 8, 8);
+  color: white;
+}
+
 .filter-content {
   display: flex;
   justify-content: space-between;
@@ -68,23 +101,33 @@
 
 .filter-content select {
   width: 150px;
-  border: 1px solid cyan;
-  padding: 0 10px;
+  border: 1px solid #ccc;
+  padding: 15px 18px;
   font-size: 18px;
+  border-radius: 5px;
+}
+.wrap-light {
+  background-color: white;
+  color: #666;
 }
 
+.wrap-dark {
+  background-color: black;
+  color: white;
+}
 .expense-wrapper-heading {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-  color: #666;
   font-weight: 500;
+  margin: 0 350px;
 }
 
 .ExpenseItemList {
   list-style: none;
   padding: 30px;
   margin-top: -80px;
+  
 }
 
 .expense-item {
@@ -92,16 +135,106 @@
   justify-content: space-between;
   align-items: center;
   font-size: 24px;
-  color: #313131;
   margin: 18px 0;
-  border: 1px solid #ddd;
+  border-radius: 5px;
   padding: 15px;
 }
+.item-light {
+  background-color: rgba(204, 204, 204, 0.24);
+  border: 1px solid #ddd;
+  color: #313131;
+  border: 2px solid green;
+}
 
+.item-dark {
+  background-color: rgba(41, 41, 41, 0.712);
+  border: 1px solid #ccc;
+  color: White;
+}
 .expense-item h5 {
   margin-bottom: 10px;
 }
 
 .expense-item h6 {
   font: 8px;
+}
+
+/* Form */
+form input,
+form textarea {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 30px;
+  background-color: #ccc;
+  border: 2px solid green;
+}
+
+form textarea {
+  height: 120px;
+  background-color: #ccc;
+  border: 2px solid green;
+}
+
+.form-heading {
+  height: 200px;
+  color: #313131;
+}
+.form-heading-light {
+  background-color: #f7f7f7;
+}
+
+.form-heading-dark {
+  background-color: #8b8a8ae3;
+  color: white;
+}
+.form-heading h1 {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.submit-btn {
+  width: 160px;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  background-color: #1c88bf;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.theme-btn {
+  display: flex;   
+  align-items: center;
+
+}
+.submit-btn-light:hover {
+  border: 1px  solid black;
+
+}
+
+.submit-btn-light {
+  background-color: #1c88bf;
+}
+
+.submit-btn-dark {
+  background-color: #153444;
+}
+.submit-btn-dark:hover {
+  border: 1px solid white;
+}
+.form-wrapper-light{
+background-color: white;
+}
+.form-wrapper-dark{
+  background-color:black;
+}
+.AiFillSetting{
+  font-size: 40px;
+}
+input[type="date"] {
+  text-transform: uppercase;
 }
