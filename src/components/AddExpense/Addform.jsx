@@ -1,5 +1,7 @@
 import React, { Fragment, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import { GlobalContext } from "../../context/ExpenseContext";
 import { ThemeContext } from "../../context/ThemeContext";
 
 const Addform = () => {
@@ -10,19 +12,20 @@ const Addform = () => {
 
   let [formData, setFormData] = useState({
     description: "",
-    amount: 0,
+    amount: "",
     date: "",
     note: "",
+    id:"",
   });
+  let {addExpense }=useContext(GlobalContext);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value});
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-
+    addExpense({...formData, id:uuidv4()});
     //clearInputs
     clearInputs();
 
@@ -36,6 +39,7 @@ const Addform = () => {
       amount: 0,
       date: "",
       note: "",
+      id: "",
     });
   };
 

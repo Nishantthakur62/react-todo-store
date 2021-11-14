@@ -2,6 +2,7 @@ import React, { Fragment, useState, useContext } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { ThemeContext } from "../context/ThemeContext";
 import { AiFillSetting } from 'react-icons/ai';
+
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
   const theme = useContext(ThemeContext);

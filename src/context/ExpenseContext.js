@@ -20,12 +20,19 @@ export const GlobalProvider = ({ children }) => {
       payload: newExpense,
     });
   };
+  const DeleteExpense = (newExpense) => {
+    dispatch({
+      type: "DELETE_EXPENSE", //mandatory
+      payload: newExpense,
+    });
+  };
 
   return (
     <GlobalContext.Provider
       value={{
         expenses: state.expenses,
         addExpense: addExpense,
+        DeleteExpense: DeleteExpense,
       }}
     >
       {children}

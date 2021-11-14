@@ -12,7 +12,6 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          
           <Route exact path="/addexpense" component={AddExpense}  />
         </Switch>
       </Router>

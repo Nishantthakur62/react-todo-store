@@ -1,7 +1,8 @@
-import React, { Fragment, useContext,useState } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-
+import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars';
 const ExpenseFilterForm = () => {
+  
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   return (
@@ -23,10 +24,15 @@ const ExpenseFilterForm = () => {
           </option>
           <option value="2">Amount</option>
         </select>
-        <h1>Date Picker</h1>
+        <h3>
+       <div className="date-range">
+        <DateRangePickerComponent placeholder="Click For Date Range ->"  id="daterangepicker" />
+       </div>
+        </h3>
       </div>
     </div>
   );
 };
 
 export default ExpenseFilterForm;
+      
