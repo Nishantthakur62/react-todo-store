@@ -17,7 +17,7 @@ const Addform = () => {
     note: "",
     id:"",
   });
-  let {addExpense }=useContext(GlobalContext);
+  let {addExpense,themeType }=useContext(GlobalContext);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value});
@@ -29,7 +29,7 @@ const Addform = () => {
     //clearInputs
     clearInputs();
 
-    //redirect to homepage
+    //redirect to homepagenp
     history.push("/");
   };
 
@@ -82,8 +82,11 @@ const Addform = () => {
             value={formData.note}
           ></textarea>
           <input  type="submit" className= {`submit-btn ${
-        darkMode ? "submit-btn-dark":"submit-btn-light"
-      }`}   value="Submit Form" />
+        darkMode ? "submit-btn-dark": !darkMode&&themeType==="blue"?"navBlue":
+      !darkMode&&themeType==="green"?"navGreen":
+      !darkMode&&themeType==="red"?"navRed":
+      "navBlue"
+            } `}   value="Submit Form" />
         </form>
       </div>
       </div>

@@ -4,7 +4,7 @@ import { GlobalContext } from "../../context/ExpenseContext";
 import { ThemeContext } from "../../context/ThemeContext";
 
 const ExpenseDetails = () => {
-  let {expenses}=useContext(GlobalContext)
+  let {expenses,themeType}=useContext(GlobalContext)
   let total;
   total=expenses.reduce((acc,item)=>(
     acc+=Number(item.amount)),0);
@@ -21,6 +21,7 @@ const ExpenseDetails = () => {
       <div
         className={`expensedetails ${
           darkMode ? "header-dark" : "header-light"
+          
         }`}
       >
         <div className="container expense-content">
@@ -29,7 +30,10 @@ const ExpenseDetails = () => {
           {/* <Link to="/addexpense">Add Expense</Link> */}
           <button
             className={`add-expense-btn ${
-              darkMode ? "btn-dark" : "btn-light"
+              darkMode ? "btn-dark" : !darkMode&&themeType==="blue"?"navBlue":
+      !darkMode&&themeType==="green"?"navGreen":
+      !darkMode&&themeType==="red"?"navRed":
+      "navBlue"
             } `}
             onClick={handleClick}
           >
