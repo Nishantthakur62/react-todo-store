@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import AddExpense from "./Pages/AddExpense/AddExpense";
 import Navbar from "./core/Navbar";
 import { GlobalProvider } from "./context/ExpenseContext";
+import Settings from "./Pages/Settings/Settings";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/addexpense" component={AddExpense}  />
+          <Route exact path="/settings" component={Settings}/>
         </Switch>
       </Router>
     </GlobalProvider>

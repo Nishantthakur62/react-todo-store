@@ -19,10 +19,18 @@
 }
 .navbar {
   height: 10vh;
+ color: white;
+
 }
-.nav-light {
-  background-color: #7f9cce;
-  color: white;
+
+.navGreen{
+  background-color: chartreuse;
+}
+.navBlue{
+  background-color:#7f9cce;
+}
+.navRed{
+    background-color: indianred;
 }
 
 .nav-dark {
@@ -41,6 +49,7 @@
 .navbar .navbar-wrapper h1 {
   font-size: 28px;
   cursor: pointer;
+  
 }
 h1{
   background-image: linear-gradient(15deg,  gold,red );
@@ -79,7 +88,9 @@ h1:hover{
   font-weight: 500;
 
 }
-
+.ExpenseWrapper{
+  height: 100vh;
+}
 .expense-content .add-expense-btn {
   padding: 15px 20px;
   border : none;
@@ -229,7 +240,6 @@ form textarea {
   border: none;
   outline: none;
   margin-top: 15px;
-  background-color: #1c88bf;
   font-size: 18px;
   color: white;
   cursor: pointer;
@@ -263,6 +273,7 @@ background-color: white;
 }
 .AiFillSetting{
   font-size: 40px;
+  cursor: pointer;
 }
 input[type="date"] {
   text-transform: uppercase;
@@ -281,4 +292,61 @@ input[type="date"] {
   display: flex;
   justify-content: space-between;
   width: auto;
+}
+.SettingsWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ padding: 10px;
+}
+
+.Theme{
+  height: 65vh;
+  width: 80vw;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.233);
+  margin-left: 30px;
+  
+}
+.Layout{
+  height: 65vh;
+  width: 80vw;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.233);
+}
+.green,.blue,.red{
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+  
+  margin-top: 80px;
+  margin-left: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+}
+.green:hover,.blue:hover,.red:hover{
+box-shadow: 0 0 3px 2px red,
+              0 0 4px 5px yellow;
+}
+.selected{
+  box-shadow: 0 0 0 4px;
+}
+
+.green{
+  background-color: chartreuse;
+}
+.blue{
+  background-color:#7f9cce;
+}
+.red{
+    background-color: indianred;
+}
+.light{
+  background-color:lavender;
+}
+.dark{
+   background-color: black;
 }
