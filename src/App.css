@@ -327,6 +327,9 @@ input[type="date"] {
   font-weight: bold;
   font-size: larger;
 }
+.SettingsWrapper .white{
+  background-color: white;
+}
 .green:hover,.blue:hover,.red:hover{
 box-shadow: 0 0 3px 2px red,
               0 0 4px 5px yellow;
@@ -353,4 +356,11 @@ box-shadow: 0 0 3px 2px red,
 .dark{
    background-color: black;
   color: white;
+  
+  border-style: double ;
   }
+.tracker-text h2{
+  margin: 50px;
+  padding: 5px;
+  
+}

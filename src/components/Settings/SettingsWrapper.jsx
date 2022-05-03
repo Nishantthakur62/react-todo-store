@@ -10,11 +10,10 @@ const SettingsWrapper = () => {
         <Fragment>
             <div className= {`SettingsWrapper ${!darkMode?"light":"dark"}`}  >
             <div className="Layout">
-                <Layout/>
+            <Layout/>
             </div>
-            
             <div className="Theme">
-                <Theme/>
+            <Theme/>
             </div>
            </div>
         </Fragment>

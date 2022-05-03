@@ -5,7 +5,6 @@ const Theme = () => {
     let{ChangeTheme,themeType}= useContext(GlobalContext); 
     function handleClick(e){
        ChangeTheme(e.target.classList[0]);
-        
     }
     
 
